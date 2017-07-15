@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26430.15
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetCore_Knockout", "NetCore_Knockout\NetCore_Knockout.csproj", "{BB6B7BAC-6F42-448C-B940-9F461E2E7783}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{2C54DA4A-2D18-4096-92CB-C8FC13BF8F7D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BB6B7BAC-6F42-448C-B940-9F461E2E7783}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB6B7BAC-6F42-448C-B940-9F461E2E7783}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB6B7BAC-6F42-448C-B940-9F461E2E7783}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB6B7BAC-6F42-448C-B940-9F461E2E7783}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2C54DA4A-2D18-4096-92CB-C8FC13BF8F7D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C54DA4A-2D18-4096-92CB-C8FC13BF8F7D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C54DA4A-2D18-4096-92CB-C8FC13BF8F7D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C54DA4A-2D18-4096-92CB-C8FC13BF8F7D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
