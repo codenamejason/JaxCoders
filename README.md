@@ -1,2 +1,2 @@
 # JaxCoders
-Local shared code contributions
+Local Jacksonville, shared code contributions.
