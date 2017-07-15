@@ -1,0 +1,8 @@
+version: '2'
+
+services:
+  netcore_knockout:
+    image: netcore_knockout
+    build:
+      context: ./NetCore_Knockout
+      dockerfile: Dockerfile
