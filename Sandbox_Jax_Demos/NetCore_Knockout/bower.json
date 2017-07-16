@@ -2,9 +2,21 @@
   "name": "asp.net",
   "private": true,
   "dependencies": {
-    "bootstrap": "3.3.7",
+    "bootstrap": "v4.0.0-alpha.6",
     "jquery": "2.2.0",
     "jquery-validation": "1.14.0",
-    "jquery-validation-unobtrusive": "3.2.6"
+    "jquery-validation-unobtrusive": "3.2.6",
+    "knockout": "v3.4.2",
+    "knockout-jqueryui": "v2.2.3",
+    "Knockout-Validation": "v1.0.2",
+    "knockout-fast-foreach": "v0.6.0",
+    "knockout-firebase": "v1.2.0",
+    "knockout-modal": "v0.7.17",
+    "knockout-paging": "v0.4.0",
+    "qunit": "v1.14.0",
+    "moment": "momentjs#2.18.1"
+  },
+  "resolutions": {
+    "bootstrap": "v4.0.0-alpha.6"
   }
 }

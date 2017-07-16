@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using Microsoft.EntityFrameworkCore;
+using NetCore_Knockout.Models;
 
 namespace NetCore_Knockout
 {
@@ -29,6 +31,9 @@ namespace NetCore_Knockout
         {
             // Add framework services.
             services.AddMvc();
+
+            services.AddDbContext<NetCore_KnockoutContext>(options =>
+                    options.UseSqlServer(Configuration.GetConnectionString("NetCore_KnockoutContext")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -54,6 +59,10 @@ namespace NetCore_Knockout
                 routes.MapRoute(
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
+                routes.MapRoute(
+                    name: "member",
+                    template: "{controller=Member}/{action=Index}/{id?}");
+
             });
         }
     }

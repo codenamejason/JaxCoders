@@ -1,0 +1,35 @@
+{
+  "name": "knockout-paging",
+  "main": "dist",
+  "homepage": "https://github.com/ErikSchierboom/knockout-paging",
+  "authors": [
+    "Erik Schierboom <erik_schierboom@hotmail.com>"
+  ],
+  "description": "Adds an extender to Knockout to add paging functionality to observable arrays.",
+  "keywords": [
+    "knockout",
+    "foreach",
+    "paging",
+    "initialize",
+    "javascript"
+  ],
+  "license": "Apache-2.0",
+  "ignore": [
+    "*",
+    "!dist/*"
+  ],
+  "dependencies": {
+    "knockout": "^3.2.0"
+  },
+  "version": "0.4.0",
+  "_release": "0.4.0",
+  "_resolution": {
+    "type": "version",
+    "tag": "v0.4.0",
+    "commit": "26cd95fd2dff7ef6faaf5a5cee219da716216423"
+  },
+  "_source": "https://github.com/ErikSchierboom/knockout-paging.git",
+  "_target": "v0.4.0",
+  "_originalSource": "knockout-paging",
+  "_direct": true
+}

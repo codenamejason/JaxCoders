@@ -10,19 +10,21 @@ namespace NetCore_Knockout.Controllers
     {
         public IActionResult Index()
         {
+            ViewData["Title"] = "JaxCoders";
+
             return View();
         }
 
         public IActionResult About()
         {
-            ViewData["Message"] = "Your application description page.";
+            ViewData["Message"] = "About JaxCoders Programmmers Group!";
 
             return View();
         }
 
         public IActionResult Contact()
         {
-            ViewData["Message"] = "Your contact page.";
+            ViewData["Message"] = "Contact the JaxCoders Group";
 
             return View();
         }

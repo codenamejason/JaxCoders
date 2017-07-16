@@ -1,0 +1,221 @@
+<html>
+<head>
+  <link rel='stylesheet' href='pure/pure.css'/>
+  <link rel='stylesheet' href='knockout-modal.css'/>
+  <link rel='stylesheet' href='test.css'/>
+  <title>Knockout Modal</title>
+</head>
+<body>
+  <div class='kom-contents'>
+
+    <h1>Knockout Modal</h1>
+
+    <div class='pure-g'>
+      <div class='pure-u-1-1'>
+        <h3>Basic modal</h3>
+      </div>
+      <div class='pure-u-1-2'>
+        <p>
+          We've all seen this.
+        </p>
+      </div>
+      <div class='pure-u-1-2'>
+        <p>
+          <button class="pure-button"
+            data-bind='click: open_basic_click'>Basic Modal</button>
+        </p>
+      </div>
+    </div>
+
+    <div class='pure-g'>
+      <div class='pure-u-1-1'>
+        <h3>Long modal</h3>
+      </div>
+      <div class='pure-u-1-2'>
+        <p>
+          This is a little more rare.
+        </p>
+      </div>
+      <div class='pure-u-1-2'>
+        <p>
+          <button class="pure-button"
+            data-bind='click: open_scroll_click'>Scrolling Modal</button>
+        </p>
+      </div>
+    </div>
+
+    <div class='pure-g'>
+      <div class='pure-u-1-1'>
+        <h3>Nested modals</h3>
+      </div>
+      <div class='pure-u-1-2'>
+        <p>
+          Now we're getting somewhere.
+        </p>
+      </div>
+      <div class='pure-u-1-2'>
+        <p>
+          <button class="pure-button"
+            data-bind='click: open_nested_click'>Nested Modal</button>
+        </p>
+      </div>
+    </div>
+
+    <div class='pure-g'>
+      <div class='pure-u-1-1'>
+        <h3>Async modals</h3>
+      </div>
+      <div class='pure-u-1-2'>
+        <p>
+          Because that's the world we live in.
+        </p>
+      </div>
+      <div class='pure-u-1-2'>
+        <p>
+          <button class="pure-button"
+            data-bind='click: open_async_click'>Async Modal</button>
+        </p>
+      </div>
+    </div>
+
+    <div class='pure-g'>
+      <div class='pure-u-1-1'>
+        <h3>Event modals</h3>
+      </div>
+      <div class='pure-u-1-2'>
+        <p>
+          It's easy to add a little convenience.
+        </p>
+      </div>
+      <div class='pure-u-1-2'>
+        <p>
+          <button class="pure-button" data-kom-toggle='test-event'>
+            Click-event modal
+          </button>
+        </p>
+      </div>
+    </div>
+
+    <div class='pure-g'>
+      <div class='pure-u-1-1'>
+        <h3>History and modals</h3>
+      </div>
+      <div class='pure-u-1-2'>
+        <p>
+          Normal folks use the back button a lot.
+        </p>
+      </div>
+      <div class='pure-u-1-2'>
+        <p>
+          <button class="pure-button"
+            data-bind='click: open_history_click'>History Modal</button>
+        </p>
+      </div>
+    </div>
+
+    <div class='pure-g'>
+      <div class='pure-u-1-1'>
+        <h3>Async modals and History</h3>
+      </div>
+      <div class='pure-u-1-2'>
+        <p>
+          History is told by the victor.
+        </p>
+      </div>
+      <div class='pure-u-1-2'>
+        <p>
+          <button class="pure-button"
+            data-bind='click: open_async_history_click'>Async History Modal</button>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <template id='test-basic'>
+    <h1>Hello, world.</h1>
+  </template>
+
+  <template id='test-scroll'>
+    <h1>A lot of text ... <em>so scroll!</em></h1>
+    <small>(Unless your screen is super-huge)</small>
+    <!-- ko foreach: ipsum -->
+    <p class='large' data-bind='text: $data'></p>
+    <!-- /ko -->
+
+    <p>
+      <button class="pure-button"
+        data-bind='click: $root.open_scroll_click'>Nest a scrolling modal</button>
+    </p>
+  </template>
+
+  <template id='test-nested'>
+    <h3>Modal #<em data-bind='text: count'></em></h3>
+    <hr/>
+    <button class='pure-button'
+      data-bind='click: open_click'>Go deeper</button>
+  </template>
+
+  <template id='test-async'>
+    <h3>Async</h3>
+    The promised data.
+    <p data-bind='text: phrase'>
+    </p>
+
+    <button class='pure-button'
+      data-bind='click: $parents[1].open_async_click'>
+      Nested Async
+    </button>
+  </template>
+
+  <template id='test-event'>
+    <h3>Event</h3>
+    A little <code>data-kom-toggle</code> for your coffee?
+  </template>
+
+  <template id='test-history'>
+    <h3>History</h3>
+    <h3>At: <!-- ko text: at --><!-- /ko --></h3>
+    <p>
+      Use the back/forward buttons to navigate.
+    </p>
+    <hr/>
+    <button class='pure-button'
+      data-bind='click: open_click'>Add another modal</button>
+  </template>
+
+  <template id='test-async-history'>
+    <h3>History</h3>
+    <h3>At: <!-- ko text: at --><!-- /ko --></h3>
+    <p>
+      Use the back/forward buttons to navigate.
+    </p>
+    <hr/>
+    <button class='pure-button'
+      data-bind='click: open_click'>Descend into bunny pit</button>
+  </template>
+
+  <div id='loading-animation'>
+    <span>&rarr;</span>
+  </div>
+
+  <!-- All the modals go here: -->
+  <div class='kom-modal' data-bind='KnockoutModal' data-kom-close>
+    <div class='kom-dialog' data-bind='css: css'>
+      <div class='kom-box' data-kom-close>
+        <div class='kom-modal-content'>
+          <div class='kom-close' data-kom-close title='Go back'></div>
+          <!-- ko template:{name:template,data:data,if:loaded} --><!-- /ko -->
+          <!-- ko ifnot: loaded -->
+          Loading ...
+          <!-- /ko -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src='knockout/dist/knockout.debug.js'></script>
+  <script src='jquery/dist/jquery.js'></script>
+  <script src='./index.js'></script>
+  <script src='./test.js'></script>
+</body>
+</html>
